@@ -1,0 +1,41 @@
+//
+//  FeedbackProtocol.m
+//  uuaha
+//
+//  Created by jetson  on 12-11-2.
+//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+//
+
+#import "FeedbackProtocol.h"
+
+@implementation FeedbackProtocol
+
+@synthesize mobile;
+@synthesize content;
+@synthesize versionCode;
+@synthesize userId;
+
+-(id)init{
+	self = [super init];
+	if(self){
+		userId =0;
+		mobile = @"";
+		content = @"";
+		versionCode = @"";
+	}
+return  self;
+}
+
+-(void)dealloc{
+
+	[mobile release];
+	mobile = nil;
+	[content release];
+	content = nil;
+	[versionCode release];
+	versionCode = nil;
+	
+	[super dealloc];
+}
+
+@end

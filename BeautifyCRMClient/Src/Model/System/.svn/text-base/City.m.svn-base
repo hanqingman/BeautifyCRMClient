@@ -1,0 +1,42 @@
+//
+//  City.m
+//  uuaha
+//
+//  Created by jetson  on 12-12-5.
+//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+//
+
+#import "City.h"
+
+@implementation City
+@synthesize cityId;
+@synthesize cityName;
+@synthesize cityPinYin;
+@synthesize isOpen;
+
+-(id)init{
+
+	self = [super init];
+	if(self){
+	
+		cityPinYin = @"";
+		cityName = @"";
+		cityId=0;
+	}
+	
+
+	return self;
+}
+
+-(void)dealloc{
+
+	[cityName release];
+	cityName = nil;
+	[cityPinYin release];
+	cityPinYin = nil;
+	
+	[super dealloc];
+}
+
+
+@end

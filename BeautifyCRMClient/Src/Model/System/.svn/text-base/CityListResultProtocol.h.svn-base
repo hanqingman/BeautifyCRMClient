@@ -1,0 +1,19 @@
+//
+//  CityListResultProtocol.h
+//  uuaha
+//
+//  Created by jetson  on 12-12-5.
+//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "Jastor.h"
+#import "City.h"
+@interface CityListResultProtocol : Jastor
+
+@property(nonatomic,assign)NSInteger count;
+@property(nonatomic,retain)NSMutableArray *list;
+@property(nonatomic,retain)City *userCity;
+
+
+@end

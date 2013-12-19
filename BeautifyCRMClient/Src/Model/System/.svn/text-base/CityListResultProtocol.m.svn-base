@@ -1,0 +1,45 @@
+//
+//  CityListResultProtocol.m
+//  uuaha
+//
+//  Created by jetson  on 12-12-5.
+//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+//
+
+#import "CityListResultProtocol.h"
+#import "City.h"
+@implementation CityListResultProtocol
+
+
+@synthesize list;
+@synthesize count;
+@synthesize userCity;
+
+
++ (Class)list_class {
+    return [City class];
+}
+-(id)init{
+
+	self  =[super init];
+	
+	if(self){
+		list = [[NSMutableArray alloc] init];
+		count =0;
+        userCity = [[City alloc] init];
+	}
+	return  self;
+}
+
+
+-(void)dealloc{
+
+	[list release];
+	list = nil;
+    [userCity release];
+    userCity = nil;
+	
+	[super dealloc];
+}
+
+@end

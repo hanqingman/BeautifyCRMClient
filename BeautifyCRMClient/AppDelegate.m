@@ -23,12 +23,24 @@
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        self.viewController = [[[ViewController alloc] initWithNibName:@"ViewController_iPhone" bundle:nil] autorelease];
-    } else {
-        self.viewController = [[[ViewController alloc] initWithNibName:@"ViewController_iPad" bundle:nil] autorelease];
-    }
-    self.window.rootViewController = self.viewController;
+    
+    _tabBarController = [[AKTabBarController alloc] initWithTabBarHeight:(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? 70 : 50];
+    [_tabBarController setMinimumHeightToDisplayTitle:40.0];
+    
+    ViewController *tableViewController = [[ViewController alloc] init];
+    
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:tableViewController];
+    navigationController.navigationBar.tintColor = [UIColor darkGrayColor];
+    
+    [_tabBarController setViewControllers:[NSMutableArray arrayWithObjects:
+                                           navigationController,
+                                           [[ViewController alloc] init],
+                                           [[ViewController alloc] init],
+                                           [[ViewController alloc] init],[[ViewController alloc] init],nil]];
+    
+    
+    
+    self.window.rootViewController = _tabBarController;
     [self.window makeKeyAndVisible];
     return YES;
 }

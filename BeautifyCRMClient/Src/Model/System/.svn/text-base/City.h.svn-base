@@ -1,0 +1,18 @@
+//
+//  City.h
+//  uuaha
+//
+//  Created by jetson  on 12-12-5.
+//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "Jastor.h"
+@interface City : Jastor
+@property(nonatomic,assign)NSInteger cityId;
+@property(nonatomic,copy)NSString *cityPinYin;
+@property(nonatomic,copy)NSString *cityName;
+/** 1:开放城市 0:未开放城市 */
+@property(nonatomic,assign)NSInteger isOpen;
+
+@end

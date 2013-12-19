@@ -1,0 +1,23 @@
+//
+//  CityListCommand.m
+//  uuaha
+//
+//  Created by jetson  on 12-12-5.
+//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+//
+
+#import "CityListCommand.h"
+#import "NotificationConfig.h"
+#import "ProtocolConfig.h"
+#import "CityListResultProtocol.h"
+@implementation CityListCommand
+-(void) doCommand:(NSDictionary *)dicStr{
+    NSLog(@"\n--------CityListCommand----------");    
+	CityListResultProtocol *cityListResultProtocol = [[CityListResultProtocol alloc] initWithDictionary:dicStr];  
+	
+	[[NSNotificationCenter defaultCenter]postNotificationName:NOTIFICATION_PHONE_SYSTEM_CITYLIST object:cityListResultProtocol];
+}
+-(NSString *)getCommandID{
+    return PROTOCOL_PHONE_SYSTEM_CITYLIST;
+}
+@end

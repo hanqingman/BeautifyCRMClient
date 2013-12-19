@@ -1,0 +1,25 @@
+//
+//  VersionResultProtocol.h
+//  uuaha
+//
+//  Created by jetson  on 12-9-10.
+//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "Jastor.h"
+@interface VersionResultProtocol : Jastor
+//0是不强制更新1是强制更新
+@property(nonatomic,assign)NSInteger force;
+//0是不更新1是更新
+@property(nonatomic,assign)NSInteger isUpdate;
+
+@property(nonatomic,assign)NSInteger appid;
+
+@property(nonatomic,copy)NSString *url;
+
+@property (nonatomic, copy) NSString *template;
+
+@property (nonatomic, copy) NSString *adPic;
+
+@end

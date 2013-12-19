@@ -1,0 +1,16 @@
+//
+//  CityListProtocol.h
+//  uuaha
+//
+//  Created by wang hanqing on 13-4-25.
+//
+//
+
+#import <Foundation/Foundation.h>
+
+@interface CityListProtocol : NSObject
+
+@property (nonatomic, copy) NSString *lat;
+@property (nonatomic, copy) NSString *lng;
+
+@end

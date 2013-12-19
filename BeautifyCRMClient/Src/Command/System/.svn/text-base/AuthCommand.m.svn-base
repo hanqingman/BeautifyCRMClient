@@ -1,0 +1,29 @@
+//
+//  AuthCommand.m
+//  uuaha
+//
+//  Created by jetson  on 12-9-7.
+//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+//
+
+#import "AuthCommand.h"
+#import "AuthResultProtocol.h"
+#import "ProtocolConfig.h"
+#import "NotificationConfig.h"
+
+//密钥
+@implementation AuthCommand
+
+-(void) doCommand:(NSDictionary *)dicStr{
+    NSLog(@"\n--------AuthCommand----------");    
+	AuthResultProtocol *authProtocol = [[AuthResultProtocol alloc] initWithDictionary:dicStr];  
+//	[[NSUserDefaults standardUserDefaults] setValue:[authProtocol accessToken] forKey:@"accessToken"];
+	
+	[Util setAccessToken:[authProtocol accessToken]];
+	[[NSNotificationCenter defaultCenter]postNotificationName:NOTIFICATION_PHONE_DEFAULT_AUTH object:nil];
+}
+-(NSString *)getCommandID{
+    return PROTOCOL_PHONE_DEFAULT_AUTH;
+}
+
+@end

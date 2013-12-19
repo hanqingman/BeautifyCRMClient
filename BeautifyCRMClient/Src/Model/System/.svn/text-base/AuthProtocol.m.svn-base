@@ -1,0 +1,37 @@
+//
+//  AuthProtocol.m
+//  UU
+//
+//  Created by jetson on 12-7-10.
+//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+//
+
+#import "AuthProtocol.h"
+
+@implementation AuthProtocol
+@synthesize clientKey;
+@synthesize clientSecret;
+
+
+-(void)dealloc {
+	[clientKey release];
+	self.clientKey = nil;
+    [clientSecret release];
+	self.clientSecret = nil;
+	[super dealloc];
+}
+
+-(id)init{
+	if (self = [super init]) {
+		clientKey = @"";
+		clientKey = @"";
+		
+	}
+	return self;
+    
+	
+}
+
+
+
+@end

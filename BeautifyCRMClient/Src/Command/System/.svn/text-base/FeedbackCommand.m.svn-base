@@ -1,0 +1,25 @@
+//
+//  FeedbackCommand.m
+//  uuaha
+//
+//  Created by jetson  on 12-11-2.
+//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+//
+
+#import "FeedbackCommand.h"
+#import "ProtocolConfig.h"
+#import "NotificationConfig.h"
+#import "Result.h"
+
+@implementation FeedbackCommand
+
+-(void) doCommand:(NSDictionary *)dicStr{
+    NSLog(@"\n--------FeedbackCommand----------");    
+	Result *result = [[Result alloc] initWithDictionary:dicStr];  
+//	[[NSUserDefaults standardUserDefaults] setValue:[authProtocol accessToken] forKey:@"accessToken"];
+	[[NSNotificationCenter defaultCenter]postNotificationName:NOTIFICATION_PHONE_SYSTEM_FEEDBACK object:result];
+}
+-(NSString *)getCommandID{
+    return PROTOCOL_PHONE_SYSTEM_FEEDBACK;
+}
+@end

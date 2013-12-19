@@ -1,0 +1,35 @@
+//
+//  VersionResultProtocol.m
+//  uuaha
+//
+//  Created by jetson  on 12-9-10.
+//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+//
+
+#import "VersionResultProtocol.h"
+
+@implementation VersionResultProtocol
+
+@synthesize url;
+@synthesize force;
+@synthesize isUpdate;
+@synthesize appid;
+@synthesize template;
+@synthesize adPic;
+-(void)dealloc {
+	[url release];
+	[super dealloc];
+}
+
+-(id)init{
+	if (self = [super init]) {
+		isUpdate = 0;	
+		url = @"";
+		force = 0;
+		appid=0;
+        template = @"";
+        adPic = @"";
+	}
+	return self;
+}
+@end

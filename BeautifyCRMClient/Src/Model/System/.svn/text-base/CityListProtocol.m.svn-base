@@ -1,0 +1,33 @@
+//
+//  CityListProtocol.m
+//  uuaha
+//
+//  Created by wang hanqing on 13-4-25.
+//
+//
+
+#import "CityListProtocol.h"
+
+@implementation CityListProtocol
+
+@synthesize lat = _lat;
+@synthesize lng = _lng;
+
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        _lat = @"";
+        _lng = @"";
+    }
+    return self;
+}
+
+- (void)dealloc
+{
+    [_lat release];
+    [_lng release];
+    [super dealloc];
+}
+
+@end

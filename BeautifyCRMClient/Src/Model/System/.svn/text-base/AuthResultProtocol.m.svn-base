@@ -1,0 +1,28 @@
+//
+//  AuthResultProtocol.m
+//  uuaha
+//
+//  Created by jetson  on 12-9-10.
+//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+//
+
+#import "AuthResultProtocol.h"
+
+@implementation AuthResultProtocol
+@synthesize accessToken;
+
+-(void)dealloc {
+	[accessToken release];
+	[super dealloc];
+}
+
+-(id)init{
+	if (self = [super init]) {
+		accessToken = @"";
+		
+	}
+	return self;
+    
+	
+}
+@end

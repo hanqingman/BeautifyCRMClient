@@ -1,0 +1,13 @@
+//
+//  BannerListCommand.h
+//  uuaha
+//
+//  Created by wang hanqing on 13-6-20.
+//
+//
+
+#import <Foundation/Foundation.h>
+
+@interface BannerListCommand : NSObject<ICommand>
+
+@end

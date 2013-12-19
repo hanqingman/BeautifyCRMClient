@@ -1,0 +1,23 @@
+//
+//  BannerListCommand.m
+//  uuaha
+//
+//  Created by wang hanqing on 13-6-20.
+//
+//
+
+#import "BannerListCommand.h"
+#import "ActivityCardResultProtocol.h"
+
+@implementation BannerListCommand
+
+-(void) doCommand:(NSDictionary *)dicStr{
+    NSLog(@"\n--------BannerListCommand----------");
+	ActivityCardResultProtocol *cityListResultProtocol = [[ActivityCardResultProtocol alloc] initWithDictionary:dicStr];
+	[[NSNotificationCenter defaultCenter]postNotificationName:NOTIFICATION_PHONE_SYSTEM_BANNERLIST object:cityListResultProtocol];
+}
+-(NSString *)getCommandID{
+    return PROTOCOL_PHONE_SYSTEM_BANNERLIST;
+}
+
+@end
